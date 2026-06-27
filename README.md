@@ -1,52 +1,209 @@
-# Todo App
+# Todo Application
 
-A full-stack todo application with a multi-page React frontend and a Node.js/Express backend backed by file-based JSON storage.
+A full-stack Todo Application built using **React**, **Node.js**, and **Express.js**. The application allows users to manage their todos with complete CRUD functionality. It is implemented as a **multi-page React application** (not a Single Page Application) and uses a Node.js backend with Express.js to store and manage todo data.
 
-## Project structure
+---
+
+## Features
+
+### Frontend
+
+- Multi-page React application
+- Todo List page displaying all todos
+- Single Todo Details page
+- Todo Details page receives the Todo ID through a query parameter
+- Create new todos
+- Edit existing todos
+- Delete todos
+- Mark todos as completed/incomplete
+- Responsive and user-friendly interface
+
+### Backend
+
+- RESTful CRUD APIs using Express.js
+- Create Todo
+- Read All Todos
+- Read Single Todo
+- Update Todo
+- Delete Todo
+- Data stored using JSON file (or Database, if applicable)
+- Proper error handling and validation
+
+---
+
+## Technologies Used
+
+### Frontend
+
+- React
+- React Router
+- Axios
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+
+### Backend
+
+- Node.js
+- Express.js
+
+### Data Storage
+
+- JSON File
+
+---
+
+## Project Structure
 
 ```
-todo-app/
-├── backend/          Express REST API, persists data to backend/data/todos.json
-├── frontend/         Multi-page React app (Vite + React Router)
-└── docs/
-    ├── FEATURES.md   Full list of features and how to use them
-    └── API.md        REST API reference
+todo-application/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── routes/
+│   ├── data/
+│   ├── server.js
+│   └── package.json
+│
+├── screenshots/
+│
+└── README.md
 ```
 
-## Prerequisites
+---
 
-- Node.js 18+ and npm
+## API Endpoints
 
-## Running the backend
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | /todos | Get all todos |
+| GET | /todos/:id | Get a single todo |
+| POST | /todos | Create a new todo |
+| PUT | /todos/:id | Update an existing todo |
+| DELETE | /todos/:id | Delete a todo |
+
+---
+
+## Installation
+
+### Clone the Repository
 
 ```bash
-cd backend
-npm install
-npm start
+git clone https://github.com/yourusername/your-repository-name.git
 ```
 
-The API starts on `http://localhost:4000`. Data is persisted to `backend/data/todos.json` (created empty by default).
+---
 
-## Running the frontend
-
-In a separate terminal:
+### Install Frontend Dependencies
 
 ```bash
 cd frontend
 npm install
+```
+
+---
+
+### Install Backend Dependencies
+
+```bash
+cd ../backend
+npm install
+```
+
+---
+
+## Running the Application
+
+### Start Backend
+
+```bash
+npm start
+```
+
+Backend runs on:
+
+```
+http://localhost:5000
+```
+
+### Start Frontend
+
+```bash
 npm run dev
 ```
 
-The app starts on `http://localhost:5173`. The dev server proxies `/api/*` requests to the backend on port 4000 (see `frontend/vite.config.js`), so make sure the backend is running first.
+or
 
-## Pages
+```bash
+npm start
+```
 
-- `/` — Todo list page (`frontend/src/pages/TodoListPage.jsx`)
-- `/todo?id=<id>` — Todo detail page for a single todo, identified by the `id` query parameter (`frontend/src/pages/TodoDetailPage.jsx`)
+depending on your React setup.
 
-These are distinct routes rendered by React Router, each backed by its own page component (not a single-page modal/overlay), satisfying the multi-page requirement.
+Frontend runs on:
 
-## Documentation
+```
+http://localhost:3000
+```
 
-- [docs/FEATURES.md](docs/FEATURES.md) — feature and functionality reference
-- [docs/API.md](docs/API.md) — backend API reference
+or
+
+```
+http://localhost:5173
+```
+
+---
+
+## Screenshots
+
+### Todo List Page
+
+![Todo List](screenshots/todo-list.png)
+
+### Todo Details Page
+
+![Todo Details](screenshots/todo-details.png)
+
+---
+
+## Functionalities
+
+- View all todos
+- View individual todo details
+- Add new todo
+- Update todo information
+- Delete todo
+- Mark todo status
+- Navigation between pages
+- Backend integration through REST APIs
+
+---
+
+## Future Improvements
+
+- User Authentication
+- Search Todos
+- Filter by Status
+- Due Date Support
+- Priority Levels
+- Pagination
+- Dark Mode
+- Database Integration (MongoDB/MySQL)
+
+---
+
+## Repository
+
+GitHub Repository:
+
+https://github.com/yourusername/your-repository-name
+
+---
+
+## Author
+
+**Harsha Vardhan B R**
